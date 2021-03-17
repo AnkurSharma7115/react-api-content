@@ -1,10 +1,36 @@
 .App-header {
-    background: #282c34;
+    background: slategray;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-    
+    justify-content: center space-between;
+    padding: 5px 10px;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    min-height: 50px;
   }
+  .navbar-link {
+    display: flex;
+    list-style: none;
+  }
+  
+  .navbar-link-item {
+   margin: 10px 20px 10px 0;
+   padding: 10px 20px;
+   font-size: 20px;
+    cursor: pointer;
+  }
+  .navbar-link-item:hover{
+      border-radius: 4px;
+      background-color: #222;
+      color: aliceblue;  
+      transition: 0.2s all; 
+  }
+  .navbar-link-item:active{
+    transform: scale(0.9); 
+     
+  }
+ 
+  
+  
