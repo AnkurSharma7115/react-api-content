@@ -5,7 +5,6 @@
     align-items: center;
     justify-content: center space-between;
     padding: 5px 10px;
-    position: absolute;
     z-index: 1;
     width: 100%;
     min-height: 50px;
@@ -16,10 +15,12 @@
   }
   
   .navbar-link-item {
+      text-decoration-style: none;
    margin: 10px 20px 10px 0;
    padding: 10px 20px;
-   font-size: 20px;
+   font-size: px;
     cursor: pointer;
+    color:black;
   }
   .navbar-link-item:hover{
       border-radius: 4px;
