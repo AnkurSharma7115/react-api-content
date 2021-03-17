@@ -3,11 +3,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center space-between;
+    justify-content: space-between;
     padding: 5px 10px;
     z-index: 1;
     width: 100%;
     min-height: 50px;
+    position: sticky;
+    top: 0;
+    left: 0;
   }
   .navbar-link {
     display: flex;
@@ -15,12 +18,14 @@
   }
   
   .navbar-link-item {
-      text-decoration-style: none;
-   margin: 10px 20px 10px 0;
-   padding: 10px 20px;
-   font-size: px;
+      text-decoration: none;
+   margin: 5px 20px 5px 0;
+   padding: 5px 30px;
+   font-size: 25px;
     cursor: pointer;
     color:black;
+    border: 1px solid black;
+    border-radius: 4px;
   }
   .navbar-link-item:hover{
       border-radius: 4px;
