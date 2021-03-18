@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
 import './Nav.css'
 import {Link} from "react-router-dom";
 function SideBar(props) {
