@@ -1,10 +1,9 @@
 .side-bar {
     background-color: #232323;
-    height: 100%;
-    width: 20%;
     display: block;
     position: fixed;
-    z-index: 1;
+    height: 100%;
+    width: 200px;
 }
 .side-bar-list {
     float: left;
@@ -29,8 +28,12 @@
     transform: scale(0.96); 
 }
 .home {
-    width: 80%;
+    margin-left: 200px;
+    background-color: thistle;
     display: block;
-    margin-left: 20%;
-    padding: 20px 40px;
+}
+.content{
+  display: flex;
+  flex-direction: column;
+  margin-top: 55px;
 }

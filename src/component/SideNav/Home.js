@@ -19,7 +19,7 @@ function Home(props) {
         );
     }; 
      return (
-         <div>
+         <div className="content">
              <SideBar />
              <Switch>
                  <Route path="/category1" component={items} />
