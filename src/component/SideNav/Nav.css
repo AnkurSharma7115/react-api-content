@@ -1,0 +1,36 @@
+.side-bar {
+    background-color: #232323;
+    height: 100%;
+    width: 20%;
+    display: block;
+    position: fixed;
+    z-index: 1;
+}
+.side-bar-list {
+    float: left;
+    list-style: none;
+   
+}
+.side-bar-item {
+    text-decoration: none;
+    padding:8px 8px 0px 0px;
+    margin-top: 20px;
+    margin-left: 30px;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  border-bottom: 2px solid #818181;   
+}
+.side-bar-item:hover{
+    color: white;
+    transition: 0.3s;
+}
+.side-bar-item:active{
+    transform: scale(0.96); 
+}
+.home {
+    width: 80%;
+    display: block;
+    margin-left: 20%;
+    padding: 20px 40px;
+}
