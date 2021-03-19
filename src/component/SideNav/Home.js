@@ -1,12 +1,16 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useRouteMatch } from "react-router-dom";
 import "./Nav.css";
 import SideBar from "./SideBar";
+import Category from "./Category";
 function Home(props) {
+
+    let match = useRouteMatch();
+
     const items = () => {
         return (
             <div className="home">
-                {props.images.map((data) => (
+                {props.image.images.map((data) => (
                     <div key={data.id} className="responsive">
                         <div className="gallery">
                             <a target="_blank" href="img_5terre.jpg">
@@ -23,11 +27,13 @@ function Home(props) {
             </div>
         );
     };
+   
     return (
         <div className="content">
-            <SideBar />
+            <SideBar match={match} />
             <Switch>
-                <Route path="/category1" component={items} />
+                <Route path={`${match.path}/:topicId`}><Category reelImages={props.image.reelImages}/></Route>
+                <Route path={match.path} component={items}></Route>
             </Switch>
         </div>
     );

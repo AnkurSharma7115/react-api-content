@@ -5,7 +5,7 @@ function Header() {
     return (
         <div className="App-header">            
                 <ul className="navbar-link">
-                    <Link to='/' className="navbar-link-item">Home</Link>
+                    <Link to='/home' className="navbar-link-item">Home</Link>
                     <Link to='/about' className="navbar-link-item">About</Link>
                     <Link to='/contact' className="navbar-link-item">Contact</Link>
 

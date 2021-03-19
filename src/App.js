@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import './App.css';
 import Header from './component/Header';
 import Home from './component/SideNav/Home';
@@ -16,20 +16,22 @@ class App extends Component {
     }
   }
   componentDidMount(){
-    fetch("https://jsonplaceholder.typicode.com/albums/1/photos")
-    .then(response => response.json())
-    .then(data => {
-      this.setState(prevState =>({
-        images : prevState.images=data
-      }))
+    Promise.all([
+      fetch("https://jsonplaceholder.typicode.com/albums/1/photos"),
+      fetch("https://jsonplaceholder.typicode.com/albums/1/photos?_start=0&_limit=5")
+    ])
+    .then(([res1, res2]) => {
+      return Promise.all([res1.json(), res2.json()])
     })
-    fetch("https://picsum.photos/v2/list")
-    .then(response => response.json())
-    .then(data => {
-      this.setState(prevState =>({
-        reelImages : prevState.reelImages=data
-      }))
+    .then(([res1, res2]) => {
+      this.setState({
+        images: res1,
+        reelImages: res2,
+      });
     })
+    .catch((error) => {
+      console.log(error);
+    });
 
   }
     render() {
@@ -40,7 +42,8 @@ class App extends Component {
                     <Switch>
                         <Route path="/contact" component={Contact}></Route>
                         <Route path="/about" component={About}></Route>
-                        <Route  path="/" render={() => <Home images={this.state.images} reelImages={this.state.images}/>}></Route>
+                        <Route path="/home" render={() => <Home  image={this.state}/>}></Route>
+                        <Redirect from="/" to="/home" />
                     </Switch>
                 </Router>
             </div>
