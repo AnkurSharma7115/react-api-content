@@ -11,7 +11,8 @@ class App extends Component {
     super(props)
   
     this.state = {
-       images : []
+       images : [],
+       reelImages :[]
     }
   }
   componentDidMount(){
@@ -22,9 +23,17 @@ class App extends Component {
         images : prevState.images=data
       }))
     })
+    fetch("https://api.imgur.com/3/image")
+    .then(response => response.json())
+    .then(data => {
+      this.setState(prevState =>({
+        reelImages : prevState.reelImages=data
+      }))
+    })
 
   }
     render() {
+      console.log(this.state.reelImages)
         return (
             <div className="App">
                 <Router>
