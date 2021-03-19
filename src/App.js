@@ -23,7 +23,7 @@ class App extends Component {
         images : prevState.images=data
       }))
     })
-    fetch("https://api.imgur.com/3/image")
+    fetch("https://picsum.photos/v2/list")
     .then(response => response.json())
     .then(data => {
       this.setState(prevState =>({
@@ -33,7 +33,6 @@ class App extends Component {
 
   }
     render() {
-      console.log(this.state.reelImages)
         return (
             <div className="App">
                 <Router>
@@ -41,7 +40,7 @@ class App extends Component {
                     <Switch>
                         <Route path="/contact" component={Contact}></Route>
                         <Route path="/about" component={About}></Route>
-                        <Route  path="/" render={() => <Home images={this.state.images}/>}></Route>
+                        <Route  path="/" render={() => <Home images={this.state.images} reelImages={this.state.images}/>}></Route>
                     </Switch>
                 </Router>
             </div>
