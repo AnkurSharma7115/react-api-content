@@ -4,7 +4,7 @@ function About(props) {
     return (
         <div>
             <section className="about">
-                <h1>About Us</h1>
+                <h1>About</h1>
                 <p>
                     Sed ut perspiciatis unde omnis iste natus error sit
                     voluptatem accusantium doloremque laudantium, totam rem
