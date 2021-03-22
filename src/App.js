@@ -43,7 +43,7 @@ class App extends Component {
                         <Route path="/contact" component={Contact}></Route>
                         <Route path="/about" component={About}></Route>
                         <Route path="/home" render={() => <Home  image={this.state}/>}></Route>
-                        <Redirect from="/" to="/home" />
+                        <Redirect to="/home" />
                     </Switch>
                 </Router>
             </div>

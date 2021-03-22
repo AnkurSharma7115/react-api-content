@@ -30,7 +30,7 @@ function Home(props) {
    
     return (
         <div className="content">
-            <SideBar match={match} />
+            <SideBar/>
             <Switch>
                 <Route path={`${match.path}/:topicId`}><Category reelImages={props.image.reelImages}/></Route>
                 <Route path={match.path} component={items}></Route>
