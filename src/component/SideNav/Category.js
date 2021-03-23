@@ -2,19 +2,21 @@ import React from "react";
 import { useParams } from "react-router-dom";
 
 function Category(props) {
-    let {topicId}=useParams()
+    let { topicId } = useParams();
     return (
-        <div className="home">Home {topicId}
+        <div className="home">
+            
             {props.reelImages.map((data) => (
                 <div key={data.id} className="responsive">
+                Home {topicId}
                     <div className="gallery">
-                        <a target="_blank" href="img_5terre.jpg">
-                            <img src={data.url} alt={data.title} />
+                        <a href={data.url} target="blank">
+                            <img src={data.download_url} alt={data.author} />
                         </a>
                         <div className="desc">
-                            <div>{`Album-ID : ${data.albumId}`}</div>
-                            <div>{`Title : ${data.title}`}</div>
-                            <div>{`URL : ${data.url}`}</div>
+                                <div>{`Author : ${data.author}`}</div>
+                                <div>{`Height : ${data.height}`}</div>
+                                <div>{`Width : ${data.width}`}</div>
                         </div>
                     </div>
                 </div>
@@ -22,4 +24,4 @@ function Category(props) {
         </div>
     );
 }
-export default Category
+export default Category;
