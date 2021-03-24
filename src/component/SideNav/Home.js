@@ -10,7 +10,7 @@ function Home(props) {
     const [category, setCategory] = useState([]);
 
     useEffect(() => {
-        Promise.all([fetch("https://www.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=baa945c241af5b61f3ae79dae66d1224&gallery_id=66911286-72157647277042064&format=json&nojsoncallback=1&auth_token=72157718756584057-7d90e965e3b9d555&api_sig=6fcc8df2f86340846bc493d2169cf083"),
+        Promise.all([fetch(" https://www.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=263a26ec36bcbc6698026735c6c21aff&gallery_id=66911286-72157647277042064&format=json&nojsoncallback=1"),
                       fetch("https://picsum.photos/v2/list") ])
         
         .then(([response1, response2]) => {
