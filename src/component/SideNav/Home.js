@@ -6,10 +6,8 @@ import Category from "./Category";
 import { HomeContext } from "../../HomeContext";
 function Home(props) {
     const match = useRouteMatch();
-
     const home = useContext(HomeContext);
     const { image, category } = home;
-
     const items = () => {
         return (
             <div className="home">
@@ -42,5 +40,4 @@ function Home(props) {
         </div>
     );
 }
-
 export default Home;

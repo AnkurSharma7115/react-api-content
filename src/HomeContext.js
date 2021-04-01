@@ -6,7 +6,6 @@ const HomeContext = createContext();
 const HomeProvider = (props) => {
     const [image, setImage] = useState([]);
     const [category, setCategory] = useState([]);
-
     useEffect(() => {
         const urlImage =
             "https://www.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=263a26ec36bcbc6698026735c6c21aff&gallery_id=66911286-72157647277042064&format=json&nojsoncallback=1";
@@ -26,7 +25,6 @@ const HomeProvider = (props) => {
                         item.secret +
                         ".jpg");
                 });
-
                 setImage(response1.data.photos.photo);
                 setCategory(response2.data);
             })
@@ -34,7 +32,6 @@ const HomeProvider = (props) => {
                 console.error(errors);
             });
     }, []);
-
     return (
         <HomeContext.Provider value={{ image, category }}>
             {props.children}
@@ -42,3 +39,4 @@ const HomeProvider = (props) => {
     );
 };
 export { HomeProvider, HomeContext };
+export default HomeContext;
